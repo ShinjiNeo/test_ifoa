@@ -45,8 +45,14 @@ def main():
 
         if st.button('Grafici', help="Process Dataframe"):
             st.subheader('🎨 Pairplot delle Variabili Selezionate')
-            fig = sns.pairplot(df1, hue='class', diag_kind='kde',height=4)
-            st.pyplot(fig)
+            st.markdown("## Grafico a Violino")
+            sepal_length=df1['sepal_length']
+            sepal_width=df1['sepal_width'] 
+            petal_length=df1['petal_length'] 
+            petal_width=df1['petal_width']
+            st.multiselect('select', options=['sepal_length', 'sepal_width', 'petal_length', 'petal_width'])
+            fig2=sns.violinplot(x=st.multiselect(), y=st.multiselect())
+            st.pyplot(fig2)
 
     with tab2:
         if st.button('Inferenza', help="Process Dataframe"):
