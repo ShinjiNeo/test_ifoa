@@ -6,4 +6,6 @@ seaborn
 scikit-learn
 openpyxl
 XlsxWriter
+joblib
+io
 
